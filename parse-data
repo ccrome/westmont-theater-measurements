@@ -1,0 +1,18 @@
+dat-grep long response\ 7-28-2019.dat long.dat
+dat-grep short response\ 7-28-2019.dat short.dat
+
+dat-grep 'Record Delay' long.dat  long-record-delay.dat
+dat-grep 'Record Delay' short.dat short-record-delay.dat
+
+dat-grep 'Fundamental' long.dat long-fundamental.dat
+dat-grep 'Fundamental' short.dat short-fundamental.dat
+
+dat-grep '\-l  s' long-fundamental.dat long-fundamental-left.dat
+dat-grep '\-c  s' long-fundamental.dat long-fundamental-center.dat
+dat-grep '\-r  s' long-fundamental.dat long-fundamental-right.dat
+dat-grep '\-s  s' long-fundamental.dat long-fundamental-sub.dat
+
+dat-grep '\-l  s' short-fundamental.dat short-fundamental-left.dat
+dat-grep '\-c  s' short-fundamental.dat short-fundamental-center.dat
+dat-grep '\-r  s' short-fundamental.dat short-fundamental-right.dat
+dat-grep '\-s  s' short-fundamental.dat short-fundamental-sub.dat
