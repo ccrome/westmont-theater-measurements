@@ -1,18 +1,56 @@
-dat-grep long response\ 7-28-2019.dat long.dat
-dat-grep short response\ 7-28-2019.dat short.dat
+#dat-grep long response\ 7-28-2019.dat long.dat
+#dat-grep short response\ 7-28-2019.dat short.dat
 
-dat-grep 'Record Delay' long.dat  long-record-delay.dat
-dat-grep 'Record Delay' short.dat short-record-delay.dat
+#dat-grep 'Record Delay' long.dat  long-record-delay.dat
+#dat-grep 'Record Delay' short.dat short-record-delay.dat
 
-dat-grep 'Fundamental' long.dat long-fundamental.dat
-dat-grep 'Fundamental' short.dat short-fundamental.dat
+#dat-grep 'Fundamental' long.dat long-fundamental.dat
+#dat-grep 'Fundamental' short.dat short-fundamental.dat
 
-dat-grep '\-l  s' long-fundamental.dat long-fundamental-left.dat
-dat-grep '\-c  s' long-fundamental.dat long-fundamental-center.dat
-dat-grep '\-r  s' long-fundamental.dat long-fundamental-right.dat
-dat-grep '\-s  s' long-fundamental.dat long-fundamental-sub.dat
+#dat-grep 'Lot: [a-m]-l  s' long-fundamental.dat long-fundamental-left.dat
+#dat-grep 'Lot: [a-m]-c  s' long-fundamental.dat long-fundamental-center.dat
+#dat-grep 'Lot: [a-m]-r  s' long-fundamental.dat long-fundamental-right.dat
+#dat-grep 'Lot: [a-m]-s  s' long-fundamental.dat long-fundamental-sub.dat
+#
+#dat-grep 'Lot: [a-m]-l  s' short-fundamental.dat short-fundamental-left.dat
+#dat-grep 'Lot: [a-m]-c  s' short-fundamental.dat short-fundamental-center.dat
+#dat-grep 'Lot: [a-m]-r  s' short-fundamental.dat short-fundamental-right.dat
+#dat-grep 'Lot: [a-m]-s  s' short-fundamental.dat short-fundamental-sub.dat
+#
 
-dat-grep '\-l  s' short-fundamental.dat short-fundamental-left.dat
-dat-grep '\-c  s' short-fundamental.dat short-fundamental-center.dat
-dat-grep '\-r  s' short-fundamental.dat short-fundamental-right.dat
-dat-grep '\-s  s' short-fundamental.dat short-fundamental-sub.dat
+#dat-normalize long-fundamental-left.dat   long-fundamental-left-normalized.dat   900,1100 0
+#dat-normalize long-fundamental-center.dat long-fundamental-center-normalized.dat 900,1100 0
+#dat-normalize long-fundamental-right.dat  long-fundamental-right-normalized.dat  900,1100 0
+#
+#dat-normalize short-fundamental-left.dat   short-fundamental-left-normalized.dat   900,1100 0
+#dat-normalize short-fundamental-center.dat short-fundamental-center-normalized.dat 900,1100 0
+#dat-normalize short-fundamental-right.dat  short-fundamental-right-normalized.dat  900,1100 0
+#
+#dat-avg long-fundamental-left-normalized.dat   long-fundamental-left-normalized-avg.dat
+#dat-avg long-fundamental-center-normalized.dat long-fundamental-center-normalized-avg.dat
+#dat-avg long-fundamental-right-normalized.dat  long-fundamental-right-normalized-avg.dat
+#
+#dat-avg short-fundamental-left-normalized.dat   short-fundamental-left-normalized-avg.dat
+#dat-avg short-fundamental-center-normalized.dat short-fundamental-center-normalized-avg.dat
+#dat-avg short-fundamental-right-normalized.dat  short-fundamental-right-normalized-avg.dat
+#
+#dat-grep 'dme.*03[678]' long-fundamental.dat long-dme.dat
+#dat-grep 'dme.*03[678]' short-fundamental.dat short-dme.dat
+#
+#dat-grep 'dme-l' long-dme.dat long-dme-left.dat
+#dat-grep 'dme-c' long-dme.dat long-dme-center.dat
+#dat-grep 'dme-r' long-dme.dat long-dme-right.dat
+#dat-grep 'dme-s' long-dme.dat long-dme-sub.dat
+#
+#dat-grep 'dme-l' short-dme.dat short-dme-left.dat
+#dat-grep 'dme-c' short-dme.dat short-dme-center.dat
+#dat-grep 'dme-r' short-dme.dat short-dme-right.dat
+#dat-grep 'dme-s' short-dme.dat short-dme-sub.dat
+
+dat-multiply long-dme-left.dat long-fundamental-left-normalized-avg.dat
+dat-multiply long-dme-center.dat long-fundamental-center-normalized-avg.dat
+dat-multiply long-dme-right.dat long-fundamental-right-normalized-avg.dat
+
+dat-multiply short-dme-left.dat short-fundamental-left-normalized-avg.dat
+dat-multiply short-dme-center.dat short-fundamental-center-normalized-avg.dat
+dat-multiply short-dme-right.dat short-fundamental-right-normalized-avg.dat
